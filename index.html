@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Spirit's Tribe — Hostel & Cafe, Naggar, Himachal Pradesh</title>
+  <meta name="description" content="A mudhouse hostel and cafe in an apple orchard in Naggar, HP. Mountain views, great food, and evenings with your tribe.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" id="js-hero-bg"></div>
+    <div class="hero__content">
+      <span class="hero__tag">Naggar · Himachal Pradesh · 1800m</span>
+      <h1 class="hero__title">Free Spirit's<br>Tribe</h1>
+      <p class="hero__sub">A mudhouse hostel &amp; cafe in the heart of an apple orchard.</p>
+      <div class="hero__actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+        <a href="stay.html"    class="btn btn-outline btn-lg">Explore Rooms</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="pull-quote">
+    <p class="pull-quote__text">
+      "A mudhouse in the middle of an apple orchard, 400m from the Roerich Art Gallery.
+      Mountain views, a warm cafe, and evenings with strangers who become your tribe."
+    </p>
+    <a href="contact.html" class="btn btn-outline" style="flex-shrink:0;">Get in Touch &rarr;</a>
+  </div>
+
+  <!-- Photo Mosaic -->
+  <div class="photo-mosaic" id="js-mosaic"></div>
+
+  <!-- Highlights -->
+  <section class="section section--cream">
+    <div class="container">
+      <span class="section-label text-center" style="display:block;">What awaits</span>
+      <h2 class="text-center mt-2" style="color:var(--clr-dark);">The Experience</h2>
+      <div class="highlights-grid mt-4">
+        <a href="stay.html" class="highlight-card">
+          <div class="highlight-card__icon">🛏</div>
+          <h3 class="highlight-card__title">Stay</h3>
+          <p class="highlight-card__desc">Dorm beds and private rooms with mountain views and terrace access.</p>
+        </a>
+        <a href="cafe.html" class="highlight-card">
+          <div class="highlight-card__icon">☕</div>
+          <h3 class="highlight-card__title">Cafe</h3>
+          <p class="highlight-card__desc">Breakfast, lunch and dinner — home-cooked, unhurried, in the orchard.</p>
+        </a>
+        <a href="explore.html" class="highlight-card">
+          <div class="highlight-card__icon">🥾</div>
+          <h3 class="highlight-card__title">Explore</h3>
+          <p class="highlight-card__desc">Roerich Gallery steps away. Naggar Castle, Chandrakhani Pass, and beyond.</p>
+        </a>
+        <a href="cafe.html#evenings" class="highlight-card">
+          <div class="highlight-card__icon">🌙</div>
+          <h3 class="highlight-card__title">Evenings</h3>
+          <p class="highlight-card__desc">Movie nights, live music, bonfires. Evenings with strangers who become friends.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distance Strip -->
+  <div class="distance-strip">
+    <div class="distance-item"><div class="distance-item__km">400m</div><div class="distance-item__label">Roerich Art Gallery</div></div>
+    <div class="distance-item"><div class="distance-item__km">1km</div><div class="distance-item__label">Naggar Castle</div></div>
+    <div class="distance-item"><div class="distance-item__km">22km</div><div class="distance-item__label">Old Manali</div></div>
+    <div class="distance-item"><div class="distance-item__km">38km</div><div class="distance-item__label">Kullu Airport</div></div>
+  </div>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/images.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Set hero background
+  document.getElementById('js-hero-bg').style.backgroundImage = `url('${IMAGES.hero}')`;
+
+  // Build photo mosaic
+  const mosaic = document.getElementById('js-mosaic');
+  const labels = ['Mountain View', 'Our Rooms', 'The Cafe', 'Garden & Orchard', 'Valley Vista'];
+  IMAGES.mosaic.forEach((src, i) => {
+    const a = document.createElement('a');
+    a.href = src;
+    a.setAttribute('aria-label', labels[i]);
+    if (i === 0) a.classList.add('photo-mosaic__main');
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = labels[i];
+    img.loading = i === 0 ? 'eager' : 'lazy';
+    a.appendChild(img);
+    mosaic.appendChild(a);
+  });
+</script>
+
+</body>
+</html>
