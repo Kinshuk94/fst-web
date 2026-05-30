@@ -4,26 +4,26 @@
 // below. Nothing else needs to change anywhere in the codebase.
 // ─────────────────────────────────────────────────────────────────
 const IMAGES = {
-  hero: "images/hero/main.jpg",
+  hero: "images/hero/main.webp",
 
   mosaic: [
-    "images/mosaic/landscape.jpg",   // slot 0 — large left panel
-    "images/mosaic/room.jpg",         // slot 1
-    "images/mosaic/cafe.jpg",         // slot 2
-    "images/mosaic/garden.jpg",       // slot 3
-    "images/mosaic/view.jpg",         // slot 4
+    "images/mosaic/landscape.webp",  // slot 0 — large left panel
+    "images/mosaic/room.webp",        // slot 1
+    "images/mosaic/cafe.webp",        // slot 2
+    "images/mosaic/garden.webp",      // slot 3
+    "images/mosaic/view.webp",        // slot 4
   ],
 
   rooms: {
-    dorm6:          "images/rooms/dorm-6bed.jpg",
-    dorm4:          "images/rooms/dorm-4bed.jpg",
-    privateBalcony: "images/rooms/private-balcony.jpg",
-    private:        "images/rooms/private.jpg",
+    dorm6:          "images/rooms/dorm-6bed.webp",
+    dorm4:          "images/rooms/dorm-4bed.webp",
+    privateBalcony: "images/rooms/private-balcony.webp",
+    private:        "images/rooms/private.webp",
   },
 
   cafe: {
-    food:     "images/cafe/food.jpg",
-    interior: "images/cafe/interior.jpg",
+    food:     "images/cafe/food.webp",
+    interior: "images/cafe/interior.webp",
   },
 
   explore: {
