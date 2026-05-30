@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay — Free Spirit's Tribe</title>
+  <meta name="description" content="Dorm beds and private rooms at Free Spirit's Tribe, Naggar. Monthly, weekly and daily rates available.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<main>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-label">Accommodation</span>
+      <h1 class="page-hero__title">Where you'll sleep</h1>
+      <p class="page-hero__sub">Four room types — from social dormitories to private rooms with balcony views. All with en-suite or shared bathrooms, bed linen included.</p>
+    </div>
+  </header>
+
+  <section class="section section--cream">
+    <div class="container">
+
+      <div class="pricing-note">
+        <strong>Seasonal pricing:</strong> Rates vary between peak (May–Jun, Oct) and off-peak (Nov–Apr) seasons.
+        Monthly stays offer the best value — weekly and daily rates available on request.
+        All rates are without food unless stated. <a href="contact.html" style="color:var(--clr-mid);text-decoration:underline;">Contact us for current rates &rarr;</a>
+      </div>
+
+      <div class="room-cards" id="js-room-cards"></div>
+
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <div class="pull-quote">
+    <p class="pull-quote__text">Not sure which room suits you? Drop us a message and we'll help you pick the right fit.</p>
+    <a href="contact.html" class="btn btn-outline" style="flex-shrink:0;">Get in Touch &rarr;</a>
+  </div>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/images.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script>
+const ROOMS = [
+  {
+    key: 'dorm6',
+    title: '6-Bed Dormitory',
+    meta: '6 beds · Shared bathroom',
+    features: ['Bed linen included', 'Shared bathroom', 'Locker storage', 'Social atmosphere'],
+    monthlyRange: '₹8,000 – ₹12,000 / month',
+    priceNote: 'Without food · Seasonal variation',
+    desc: 'Our most social room. Great for solo travellers looking to meet people, with six beds in a airy space with mountain-facing windows.',
+  },
+  {
+    key: 'dorm4',
+    title: '4-Bed Dormitory',
+    meta: '4 beds · Shared bathroom',
+    features: ['Bed linen included', 'Shared bathroom', 'Locker storage', 'Quieter than 6-bed'],
+    monthlyRange: '₹8,000 – ₹12,000 / month',
+    priceNote: 'Without food · Seasonal variation',
+    desc: 'A smaller dorm for those who want the community feel with a little more breathing room. Same great views, slightly fewer neighbours.',
+  },
+  {
+    key: 'privateBalcony',
+    title: 'Private Room with Balcony',
+    meta: '2 guests · En-suite bathroom · Balcony',
+    features: ['En-suite bathroom', 'Private balcony', 'Mountain view', 'Bed linen included'],
+    monthlyRange: '₹15,000 – ₹21,000 / month',
+    priceNote: 'Without food · Seasonal variation',
+    desc: 'Our most loved room. Wake up to mountain views from your own balcony — the apple orchard below, the Kullu valley stretching out ahead.',
+  },
+  {
+    key: 'private',
+    title: 'Private Room',
+    meta: '2 guests · En-suite bathroom',
+    features: ['En-suite bathroom', 'Garden-facing', 'Bed linen included', 'Quiet & cosy'],
+    monthlyRange: '₹15,000 – ₹21,000 / month',
+    priceNote: 'Without food · Seasonal variation',
+    desc: 'A comfortable private room overlooking the garden and orchard. Perfect for couples or solo travellers who want their own quiet space.',
+  },
+];
+
+const container = document.getElementById('js-room-cards');
+ROOMS.forEach(r => {
+  container.innerHTML += `
+    <div class="room-card">
+      <img class="room-card__img" src="${IMAGES.rooms[r.key]}" alt="${r.title}" loading="lazy">
+      <div class="room-card__body">
+        <h3 class="room-card__title">${r.title}</h3>
+        <p class="room-card__meta">${r.meta}</p>
+        <p style="font-size:0.88rem;color:var(--clr-muted);margin-top:0.75rem;">${r.desc}</p>
+        <div class="room-card__features">
+          ${r.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
+        </div>
+        <div class="room-card__pricing">
+          <div class="price-row">
+            <span class="price-label">Monthly stay</span>
+            <span class="price-value">${r.monthlyRange}</span>
+          </div>
+          <div class="price-row">
+            <span class="price-label">Weekly / Daily</span>
+            <span class="price-value" style="font-size:0.85rem;color:var(--clr-muted);">On request</span>
+          </div>
+          <p class="price-note">${r.priceNote}</p>
+        </div>
+        <div class="room-card__cta">
+          <a href="https://wa.me/919582956085?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20${encodeURIComponent(r.title)}" target="_blank" rel="noopener" class="btn btn-primary btn-full">Enquire on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
