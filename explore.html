@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore — Free Spirit's Tribe</title>
+  <meta name="description" content="Things to do in and around Naggar — the Roerich Gallery, Naggar Castle, Chandrakhani Pass, and day trips to Manali and beyond.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<main>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-label">Explore Naggar</span>
+      <h1 class="page-hero__title">Your adventure guide</h1>
+      <p class="page-hero__sub">We're in one of Himachal's best-kept corners. Here's what's on the doorstep — and what's worth the drive.</p>
+    </div>
+  </header>
+
+  <section class="section section--cream">
+    <div class="container" id="js-explore-content"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/images.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script>
+const SECTIONS = [
+  {
+    title: 'Right on the doorstep',
+    items: [
+      {
+        img: IMAGES.explore.roerichGallery,
+        title: 'Roerich Art Gallery',
+        badges: [{ label: '400m walk', cls: 'badge--dist' }, { label: 'Cultural', cls: 'badge--type' }, { label: 'Easy', cls: 'badge--easy' }],
+        desc: 'Nicholas Roerich — the Russian artist and mystic — spent his last years in Naggar and painted the Himalayas like no one else. His home is now a gallery 400 metres from our gate. Worth an hour or two.',
+        footer: ['⏱ 1–2 hrs', '🚶 Walk from hostel'],
+      },
+      {
+        img: IMAGES.explore.naggarCastle,
+        title: 'Naggar Castle',
+        badges: [{ label: '1km walk', cls: 'badge--dist' }, { label: 'Historical', cls: 'badge--type' }, { label: 'Easy', cls: 'badge--easy' }],
+        desc: 'A 15th-century fort built in the Kathkuni style — interlocking stone and deodar wood. Now a heritage hotel, you can walk in to explore the courtyard and soak in views across the Kullu valley.',
+        footer: ['⏱ 1–2 hrs', '🚶 10 min walk uphill'],
+      },
+    ],
+  },
+  {
+    title: 'Hikes from Naggar',
+    items: [
+      {
+        img: IMAGES.explore.chandraKhani,
+        title: 'Chandrakhani Pass',
+        badges: [{ label: '14km trek', cls: 'badge--dist' }, { label: 'Trek', cls: 'badge--type' }, { label: 'Moderate–Hard', cls: 'badge--moderate' }],
+        desc: "One of Himachal's great ridge treks. The pass sits at 3650m with sweeping views of Deo Tibba (6001m) and the Parvati Valley. The trailhead starts near Rumsu village, 4km from us.",
+        footer: ['⏱ Full day (6–8 hrs)', '🚖 Taxi to Rumsu (4km)'],
+      },
+      {
+        img: IMAGES.explore.solangValley,
+        title: 'Rumsu Village Loop',
+        badges: [{ label: '5km loop', cls: 'badge--dist' }, { label: 'Walk', cls: 'badge--type' }, { label: 'Easy', cls: 'badge--easy' }],
+        desc: 'A gentle half-day walk through apple orchards, deodar cedar forests, and the traditional stone-and-wood village of Rumsu. Stunning in autumn when the trees turn gold.',
+        footer: ['⏱ 3–4 hrs', '🚶 Walk from hostel'],
+      },
+    ],
+  },
+  {
+    title: 'Day trips',
+    items: [
+      {
+        img: IMAGES.explore.naggarCastle,
+        title: 'Old Manali',
+        badges: [{ label: '22km', cls: 'badge--dist' }, { label: 'Town', cls: 'badge--type' }, { label: 'Easy', cls: 'badge--easy' }],
+        desc: 'The original backpacker hub of the Kullu valley. Cafes, little shops, the Manu Temple, and a buzzing traveller scene. A great half-day when you want something livelier.',
+        footer: ['⏱ Half day', '🚖 Taxi ~45 min (₹300–400)'],
+      },
+      {
+        img: IMAGES.explore.solangValley,
+        title: 'Solang Valley',
+        badges: [{ label: '36km', cls: 'badge--dist' }, { label: 'Adventure', cls: 'badge--type' }, { label: 'Easy', cls: 'badge--easy' }],
+        desc: "Paragliding and zorbing in summer; skiing and snow activities in winter. A crowd-pleaser that's worth the drive for the high-altitude meadow scenery alone.",
+        footer: ['⏱ Half to full day', '🚖 Taxi ~1 hr (₹500–600)'],
+      },
+      {
+        img: IMAGES.explore.chandraKhani,
+        title: 'Tibetan Monastery & Hidimba Temple',
+        badges: [{ label: '23–26km', cls: 'badge--dist' }, { label: 'Cultural', cls: 'badge--type' }, { label: 'Easy', cls: 'badge--easy' }],
+        desc: 'Pair the colourful Gadhan Thekchhokling Gompa in Manali with the ancient wooden Hidimba Devi temple in its deodar forest. Both in the same half-day loop.',
+        footer: ['⏱ Half day', '🚖 Taxi from hostel'],
+      },
+      {
+        img: IMAGES.explore.solangValley,
+        title: 'Malana Village',
+        badges: [{ label: '45km', cls: 'badge--dist' }, { label: 'Village', cls: 'badge--type' }, { label: 'Moderate', cls: 'badge--moderate' }],
+        desc: "One of India's most isolated villages, with its own ancient dialect, customs, and self-governing council. Entry is restricted and touching locals or their property is forbidden — go with respect and curiosity.",
+        footer: ['⏱ Full day', '🚖 Taxi ~1.5 hrs (permit required)'],
+      },
+    ],
+  },
+];
+
+const container = document.getElementById('js-explore-content');
+SECTIONS.forEach(sec => {
+  let cards = sec.items.map(it => `
+    <div class="adventure-card">
+      <img class="adventure-card__img" src="${it.img}" alt="${it.title}" loading="lazy">
+      <div class="adventure-card__body">
+        <div class="adventure-card__badges">
+          ${it.badges.map(b => `<span class="badge ${b.cls}">${b.label}</span>`).join('')}
+        </div>
+        <h3 class="adventure-card__title">${it.title}</h3>
+        <p class="adventure-card__desc">${it.desc}</p>
+        <div class="adventure-card__footer">
+          <span>${it.footer[0]}</span>
+          <span>${it.footer[1]}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  container.innerHTML += `
+    <div class="adventure-section-title">${sec.title}</div>
+    <div class="adventure-cards">${cards}</div>
+  `;
+});
+</script>
+
+</body>
+</html>
