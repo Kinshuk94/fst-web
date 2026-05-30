@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe & Amenities — Free Spirit's Tribe</title>
+  <meta name="description" content="Home-cooked breakfast, lunch and dinner. A garden cafe, shared lounge, evening entertainment — the full Free Spirit's Tribe experience.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<main>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-label">Cafe &amp; Amenities</span>
+      <h1 class="page-hero__title">More than just a bed</h1>
+      <p class="page-hero__sub">Home-cooked meals, a garden to linger in, and evenings that turn strangers into friends.</p>
+    </div>
+  </header>
+
+  <!-- Meals -->
+  <section class="section section--cream">
+    <div class="container">
+      <span class="section-label">Food</span>
+      <h2 style="color:var(--clr-dark);">Meals — Homestay Style</h2>
+      <p style="color:var(--clr-muted);margin-top:0.5rem;max-width:560px;">We cook for you like family. Three meals a day, made fresh, served in the garden or the shared dining space. Open to all guests — staying long-term means you'll never need to think about food.</p>
+      <p style="font-size:0.85rem;color:var(--clr-aqua);margin-top:0.5rem;">Cafe open daily · 8:00 AM – 8:00 PM</p>
+      <div class="meals-grid mt-4" id="js-meals"></div>
+    </div>
+  </section>
+
+  <!-- Amenities -->
+  <section class="section section--dark">
+    <div class="container">
+      <span class="section-label">Amenities</span>
+      <h2>What's included</h2>
+      <div class="amenities-grid mt-4">
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🏔️</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Mountain Views</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">Rooms, terrace and garden all face the Kullu valley.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🌿</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Garden &amp; Orchard</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">Apple orchard and garden to lounge in all day.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🛋️</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Shared Lounge</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">Cosy common area for reading, talking, or doing nothing.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🍳</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Guest Kitchen</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">Fully equipped shared kitchen if you want to cook your own food.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🎬</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Evening Entertainment</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">Movie nights, live music, bonfires — something most evenings.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🐾</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Pet Friendly</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">Your four-legged companions are welcome with prior notice.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🌐</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">English Speaking Staff</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">English, Hindi and Marathi spoken. We'll help you plan your time here.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🏡</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Terrace Access</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">All rooms have access to the shared terrace with panoramic views.</div></div>
+        </div>
+        <div class="amenity-item" style="background:rgba(255,255,255,0.08);color:var(--clr-cream);">
+          <span class="amenity-item__icon">🥾</span>
+          <div><div class="amenity-item__title" style="color:var(--clr-cream);">Activity Help</div><div class="amenity-item__desc" style="color:rgba(240,230,210,0.65);">We help organise treks, local tours, and taxi bookings.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Evenings -->
+  <section class="section section--cream" id="evenings">
+    <div class="container" style="max-width:720px;">
+      <span class="section-label">Evenings</span>
+      <h2 style="color:var(--clr-dark);">After the sun goes down</h2>
+      <p style="color:var(--clr-muted);margin-top:0.75rem;line-height:1.8;">
+        The days are for exploring. The evenings are for the tribe.<br><br>
+        Most nights there's something happening — a film on the projector, a guitarist who wandered in, or just a bonfire in the orchard with chai and conversation. These evenings are never planned. They just happen, the way the best evenings do.
+      </p>
+    </div>
+  </section>
+
+  <!-- House Rules -->
+  <section class="section section--cream" style="padding-top:0;">
+    <div class="container">
+      <span class="section-label">House rules</span>
+      <h2 style="color:var(--clr-dark);">Good to know</h2>
+      <div class="rules-list mt-4" style="max-width:640px;">
+        <div class="rule-item"><span class="rule-item__icon">🕐</span><span>Check-in from <strong>11:00 AM</strong> · Check-out by <strong>11:00 AM</strong></span></div>
+        <div class="rule-item"><span class="rule-item__icon">💵</span><span>Payments accepted in <strong>cash and UPI</strong></span></div>
+        <div class="rule-item"><span class="rule-item__icon">🤫</span><span>Respect quiet hours and fellow guests</span></div>
+        <div class="rule-item"><span class="rule-item__icon">🐾</span><span>Pets welcome with <strong>prior notice</strong></span></div>
+        <div class="rule-item"><span class="rule-item__icon">🍽️</span><span>Cafe serves meals from <strong>8:00 AM – 8:00 PM</strong> daily</span></div>
+        <div class="rule-item"><span class="rule-item__icon">📍</span><span>We're 400m ahead of Roerich Art Gallery on Pulag Road — look for the wooden sign at the gate</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/images.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script>
+const MEALS = [
+  { time: 'Morning · 8–10 AM', title: 'Breakfast', desc: 'Parathas, eggs, porridge, toast with local jam and chai. A slow, warm start to the day.', img: IMAGES.cafe.food },
+  { time: 'Midday · 1–2 PM',   title: 'Lunch',     desc: 'Dal, rice, sabzi, chapati — home-cooked North Indian food that keeps you going for a full day of exploring.', img: IMAGES.cafe.interior },
+  { time: 'Evening · 7–8 PM',  title: 'Dinner',    desc: 'Seasonal local produce, hearty and warm. The best meal of the day, shared around the table with whoever\'s in the tribe that night.', img: IMAGES.cafe.food },
+];
+
+const mealsEl = document.getElementById('js-meals');
+MEALS.forEach(m => {
+  mealsEl.innerHTML += `
+    <div class="meal-card">
+      <img class="meal-card__img" src="${m.img}" alt="${m.title}" loading="lazy">
+      <div class="meal-card__body">
+        <div class="meal-card__time">${m.time}</div>
+        <h3 class="meal-card__title">${m.title}</h3>
+        <p class="meal-card__desc">${m.desc}</p>
+      </div>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
