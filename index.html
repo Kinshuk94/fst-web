@@ -81,6 +81,15 @@
 
 <footer class="site-footer" id="site-footer"></footer>
 
+<!-- Lightbox -->
+<div class="lightbox" id="js-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox__close" id="js-lb-close" aria-label="Close">&times;</button>
+  <button class="lightbox__arrow lightbox__prev" id="js-lb-prev" aria-label="Previous">&#8249;</button>
+  <img class="lightbox__img" id="js-lb-img" src="" alt="">
+  <button class="lightbox__arrow lightbox__next" id="js-lb-next" aria-label="Next">&#8250;</button>
+  <div class="lightbox__dots" id="js-lb-dots"></div>
+</div>
+
 <script src="js/images.js"></script>
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>
@@ -95,6 +104,7 @@
     const a = document.createElement('a');
     a.href = src;
     a.setAttribute('aria-label', labels[i]);
+    a.dataset.lbIndex = i;
     if (i === 0) a.classList.add('photo-mosaic__main');
     const img = document.createElement('img');
     img.src = src;
@@ -102,6 +112,54 @@
     img.loading = i === 0 ? 'eager' : 'lazy';
     a.appendChild(img);
     mosaic.appendChild(a);
+  });
+
+  // Lightbox
+  const lb = document.getElementById('js-lightbox');
+  const lbImg = document.getElementById('js-lb-img');
+  const lbDots = document.getElementById('js-lb-dots');
+  let lbIndex = 0;
+
+  IMAGES.mosaic.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'lightbox__dot';
+    dot.setAttribute('aria-label', `Photo ${i + 1}`);
+    dot.addEventListener('click', () => showLb(i));
+    lbDots.appendChild(dot);
+  });
+
+  function showLb(i) {
+    lbIndex = (i + IMAGES.mosaic.length) % IMAGES.mosaic.length;
+    lbImg.src = IMAGES.mosaic[lbIndex];
+    lbImg.alt = labels[lbIndex];
+    lb.querySelectorAll('.lightbox__dot').forEach((d, idx) =>
+      d.classList.toggle('active', idx === lbIndex));
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLb() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  mosaic.addEventListener('click', e => {
+    const a = e.target.closest('a[data-lb-index]');
+    if (!a) return;
+    e.preventDefault();
+    showLb(+a.dataset.lbIndex);
+  });
+
+  document.getElementById('js-lb-close').addEventListener('click', closeLb);
+  document.getElementById('js-lb-prev').addEventListener('click', () => showLb(lbIndex - 1));
+  document.getElementById('js-lb-next').addEventListener('click', () => showLb(lbIndex + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') showLb(lbIndex - 1);
+    if (e.key === 'ArrowRight') showLb(lbIndex + 1);
   });
 </script>
 
