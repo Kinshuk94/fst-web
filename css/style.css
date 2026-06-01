@@ -129,14 +129,14 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 /* ── Highlights Grid ────────────────────────────── */
 .highlights-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 .highlight-card {
-  background: var(--clr-white); border-radius: var(--radius-lg);
-  padding: 28px 24px; box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s; display: block; color: inherit;
+  background: var(--clr-surface); border-radius: var(--radius);
+  border-left: 3px solid var(--clr-accent);
+  padding: 28px 24px; transition: transform 0.2s; display: block; color: inherit;
 }
-.highlight-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.highlight-card:hover { transform: translateY(-4px); }
 .highlight-card__icon  { font-size: 2rem; margin-bottom: 0.75rem; }
-.highlight-card__title { color: var(--clr-dark); margin-bottom: 0.4rem; }
-.highlight-card__desc  { font-size: 0.88rem; color: var(--clr-muted); }
+.highlight-card__title { font-family: var(--font-serif); color: var(--clr-dark); margin-bottom: 0.4rem; }
+.highlight-card__desc  { font-size: 0.88rem; color: var(--clr-text-lt); }
 @media (max-width: 768px) { .highlights-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 480px) { .highlights-grid { grid-template-columns: 1fr; } }
 
@@ -156,21 +156,21 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 
 /* ── Room Cards ─────────────────────────────────── */
 .room-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
-.room-card  { background: var(--clr-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.room-card  { background: var(--clr-surface); border-radius: var(--radius); overflow: hidden; border-left: 3px solid var(--clr-accent); display: flex; flex-direction: column; }
 .room-card__img  { height: 220px; object-fit: cover; width: 100%; }
 .room-card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-.room-card__title { color: var(--clr-dark); }
-.room-card__meta  { font-size: 0.83rem; color: var(--clr-muted); margin-top: 0.3rem; }
+.room-card__title { font-family: var(--font-serif); color: var(--clr-dark); }
+.room-card__meta  { font-size: 0.83rem; color: var(--clr-text-lt); margin-top: 0.3rem; }
 .room-card__features { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 6px; }
-.feature-tag { font-size: 0.73rem; padding: 0.25em 0.7em; border-radius: 100px; background: rgba(44,74,62,0.1); color: var(--clr-dark); }
-.room-card__pricing { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--clr-light); }
+.feature-tag { font-family: var(--font-sans); font-size: 0.73rem; padding: 0.25em 0.7em; border-radius: 3px; background: rgba(26,53,48,0.1); color: var(--clr-dark); }
+.room-card__pricing { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--clr-surface); }
 .price-row   { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
-.price-label { font-size: 0.78rem; color: var(--clr-muted); }
+.price-label { font-size: 0.78rem; color: var(--clr-text-lt); }
 .price-value { font-family: var(--font-serif); font-size: 1rem; color: var(--clr-dark); font-weight: bold; }
-.price-note  { font-size: 0.72rem; color: var(--clr-muted); margin-top: 4px; }
+.price-note  { font-size: 0.72rem; color: var(--clr-text-lt); margin-top: 4px; }
 .room-card__cta { margin-top: auto; padding-top: 1.25rem; }
 .pricing-note {
-  background: rgba(44,74,62,0.07); border-left: 3px solid var(--clr-mid);
+  background: rgba(26,53,48,0.07); border-left: 3px solid var(--clr-accent);
   border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px;
   font-size: 0.88rem; color: var(--clr-dark); margin-bottom: 2rem;
 }
@@ -178,12 +178,12 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 
 /* ── Meals ──────────────────────────────────────── */
 .meals-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.meal-card  { background: var(--clr-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); text-align: center; }
+.meal-card  { background: var(--clr-surface); border-radius: var(--radius); overflow: hidden; border-left: 3px solid var(--clr-accent); text-align: center; }
 .meal-card__img  { height: 160px; object-fit: cover; width: 100%; }
 .meal-card__body { padding: 20px; }
-.meal-card__time { font-size: 0.73rem; color: var(--clr-aqua); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
-.meal-card__title { color: var(--clr-dark); }
-.meal-card__desc  { font-size: 0.83rem; color: var(--clr-muted); margin-top: 0.4rem; }
+.meal-card__time { font-family: var(--font-sans); font-size: 0.73rem; color: var(--clr-accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.meal-card__title { font-family: var(--font-serif); color: var(--clr-dark); }
+.meal-card__desc  { font-size: 0.83rem; color: var(--clr-text-lt); margin-top: 0.4rem; }
 @media (max-width: 640px) { .meals-grid { grid-template-columns: 1fr; } }
 
 /* ── Amenities ──────────────────────────────────── */
