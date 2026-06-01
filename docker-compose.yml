@@ -2,9 +2,30 @@ services:
   website:
     image: nginx:alpine
     container_name: fst-website
+    restart: always
     volumes:
       - .:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    ports:
-      - "80:80"
-    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      # Apex domain — serve the site
+      - traefik.http.routers.fst.rule=Host(`freespiritstribe.com`)
+      - traefik.http.routers.fst.entrypoints=websecure
+      - traefik.http.routers.fst.tls=true
+      - traefik.http.routers.fst.tls.certresolver=mytlschallenge
+      # www — redirect to apex
+      - traefik.http.routers.fst-www.rule=Host(`www.freespiritstribe.com`)
+      - traefik.http.routers.fst-www.entrypoints=websecure
+      - traefik.http.routers.fst-www.tls=true
+      - traefik.http.routers.fst-www.tls.certresolver=mytlschallenge
+      - traefik.http.routers.fst-www.middlewares=fst-www-redirect
+      - traefik.http.middlewares.fst-www-redirect.redirectregex.regex=^https://www\.freespiritstribe\.com/(.*)
+      - traefik.http.middlewares.fst-www-redirect.redirectregex.replacement=https://freespiritstribe.com/$${1}
+      - traefik.http.middlewares.fst-www-redirect.redirectregex.permanent=true
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
