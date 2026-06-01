@@ -189,37 +189,37 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 
 /* ── Amenities ──────────────────────────────────── */
 .amenities-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-.amenity-item { display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--clr-white); border-radius: var(--radius); box-shadow: var(--shadow); }
+.amenity-item { display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--clr-surface); border-radius: var(--radius); border-left: 3px solid var(--clr-accent); }
 .amenity-item__icon  { font-size: 1.4rem; flex-shrink: 0; }
-.amenity-item__title { font-weight: 600; font-size: 0.92rem; color: var(--clr-dark); }
-.amenity-item__desc  { font-size: 0.8rem; color: var(--clr-muted); margin-top: 2px; }
+.amenity-item__title { font-family: var(--font-sans); font-weight: 600; font-size: 0.92rem; color: var(--clr-dark); }
+.amenity-item__desc  { font-size: 0.8rem; color: var(--clr-text-lt); margin-top: 2px; }
 @media (max-width: 768px) { .amenities-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 480px) { .amenities-grid { grid-template-columns: 1fr; } }
 
 /* ── Rules ──────────────────────────────────────── */
 .rules-list { display: flex; flex-direction: column; gap: 12px; }
-.rule-item  { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--clr-white); border-radius: var(--radius); box-shadow: var(--shadow); font-size: 0.93rem; }
+.rule-item  { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--clr-surface); border-radius: var(--radius); border-left: 3px solid var(--clr-accent); font-size: 0.93rem; }
 .rule-item__icon { font-size: 1.1rem; flex-shrink: 0; }
 
 /* ── Adventure Cards (Explore) ──────────────────── */
 .adventure-section-title {
   font-family: var(--font-serif); font-size: 1.05rem; color: var(--clr-mid);
-  padding-bottom: 0.5rem; border-bottom: 1px solid var(--clr-light); margin: 2.5rem 0 1.25rem;
+  padding-bottom: 0.5rem; border-bottom: 2px solid var(--clr-dark); margin: 2.5rem 0 1.25rem;
 }
 .adventure-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.adventure-card  { background: var(--clr-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
-.adventure-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.adventure-card  { background: var(--clr-surface); border-radius: var(--radius); overflow: hidden; border-left: 3px solid var(--clr-accent); transition: transform 0.2s; }
+.adventure-card:hover { transform: translateY(-4px); }
 .adventure-card__img  { height: 180px; object-fit: cover; width: 100%; }
 .adventure-card__body { padding: 16px; }
 .adventure-card__badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 0.5rem; }
-.badge { font-size: 0.68rem; padding: 0.2em 0.65em; border-radius: 100px; font-weight: 600; letter-spacing: 0.04em; }
-.badge--dist  { background: rgba(44,74,62,0.1);  color: var(--clr-dark); }
-.badge--type  { background: rgba(46,184,184,0.15); color: #1a8888; }
-.badge--easy  { background: #e8f5e9; color: #2e7d32; }
-.badge--moderate { background: #fff3e0; color: #bf360c; }
-.adventure-card__title { color: var(--clr-dark); margin-bottom: 0.35rem; font-size: 1rem; }
-.adventure-card__desc  { font-size: 0.83rem; color: var(--clr-muted); line-height: 1.5; }
-.adventure-card__footer { display: flex; justify-content: space-between; margin-top: 0.7rem; font-size: 0.76rem; color: var(--clr-muted); }
+.badge { font-family: var(--font-sans); font-size: 0.68rem; padding: 0.2em 0.65em; border-radius: 3px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.badge--dist     { background: var(--clr-mid);     color: #fff; }
+.badge--type     { background: var(--clr-surface);  color: var(--clr-text); border: 1px solid var(--clr-accent); }
+.badge--easy     { background: var(--clr-mid);      color: #fff; }
+.badge--moderate { background: var(--clr-accent);   color: #fff; }
+.adventure-card__title { font-family: var(--font-serif); color: var(--clr-dark); margin-bottom: 0.35rem; font-size: 1rem; }
+.adventure-card__desc  { font-size: 0.83rem; color: var(--clr-text-lt); line-height: 1.5; }
+.adventure-card__footer { display: flex; justify-content: space-between; margin-top: 0.7rem; font-size: 0.76rem; color: var(--clr-text-lt); }
 @media (max-width: 900px) { .adventure-cards { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 540px) { .adventure-cards { grid-template-columns: 1fr; } }
 
