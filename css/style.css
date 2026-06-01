@@ -46,16 +46,19 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 
 /* ── Buttons ────────────────────────────────────── */
 .btn {
-  display: inline-block; padding: 0.65em 1.4em; border-radius: 100px;
-  font-size: 0.9rem; font-weight: 600; letter-spacing: 0.03em;
-  cursor: pointer; transition: opacity 0.15s, transform 0.15s; border: none;
+  display: inline-block; padding: 0.65em 1.4em; border-radius: 3px;
+  font-family: var(--font-sans); font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.15s, color 0.15s, transform 0.15s;
+  border: 2px solid transparent;
 }
-.btn:hover { opacity: 0.88; transform: translateY(-1px); }
-.btn-primary { background: var(--clr-terra);  color: var(--clr-white); }
-.btn-outline  { background: transparent; color: var(--clr-cream); border: 1.5px solid var(--clr-cream); }
-.btn-dark     { background: var(--clr-dark);  color: var(--clr-cream); }
-.btn-aqua     { background: var(--clr-aqua);  color: var(--clr-white); }
-.btn-lg { font-size: 1rem; padding: 0.8em 2em; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--clr-accent); color: #fff; border-color: var(--clr-accent); }
+.btn-primary:hover { opacity: 0.9; }
+.btn-outline { background: transparent; color: var(--clr-accent); border: 2px solid var(--clr-accent); }
+.btn-outline:hover { background: var(--clr-accent); color: #fff; }
+.btn-dark { background: var(--clr-dark); color: var(--clr-muted); border-color: var(--clr-dark); }
+.btn-lg   { font-size: 1rem; padding: 0.8em 2em; }
 .btn-full { width: 100%; text-align: center; }
 
 /* ── Nav ────────────────────────────────────────── */
