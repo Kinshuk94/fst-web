@@ -162,15 +162,15 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 .room-card__title { font-family: var(--font-serif); color: var(--clr-dark); }
 .room-card__meta  { font-size: 0.83rem; color: var(--clr-text-lt); margin-top: 0.3rem; }
 .room-card__features { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 6px; }
-.feature-tag { font-family: var(--font-sans); font-size: 0.73rem; padding: 0.25em 0.7em; border-radius: 3px; background: rgba(26,53,48,0.1); color: var(--clr-dark); }
-.room-card__pricing { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--clr-surface); }
+.feature-tag { font-family: var(--font-sans); font-size: 0.73rem; padding: 0.25em 0.7em; border-radius: 3px; background: color-mix(in srgb, var(--clr-dark) 10%, transparent); color: var(--clr-dark); }
+.room-card__pricing { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--clr-muted); }
 .price-row   { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
 .price-label { font-size: 0.78rem; color: var(--clr-text-lt); }
 .price-value { font-family: var(--font-serif); font-size: 1rem; color: var(--clr-dark); font-weight: bold; }
 .price-note  { font-size: 0.72rem; color: var(--clr-text-lt); margin-top: 4px; }
 .room-card__cta { margin-top: auto; padding-top: 1.25rem; }
 .pricing-note {
-  background: rgba(26,53,48,0.07); border-left: 3px solid var(--clr-accent);
+  background: color-mix(in srgb, var(--clr-dark) 7%, transparent); border-left: 3px solid var(--clr-accent);
   border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px;
   font-size: 0.88rem; color: var(--clr-dark); margin-bottom: 2rem;
 }
@@ -184,7 +184,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 .meal-card__time { font-family: var(--font-sans); font-size: 0.73rem; color: var(--clr-accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
 .meal-card__title { font-family: var(--font-serif); color: var(--clr-dark); }
 .meal-card__desc  { font-size: 0.83rem; color: var(--clr-text-lt); margin-top: 0.4rem; }
-@media (max-width: 640px) { .meals-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .meals-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 480px) { .meals-grid { grid-template-columns: 1fr; } }
 
 /* ── Amenities ──────────────────────────────────── */
 .amenities-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
