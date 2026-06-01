@@ -94,24 +94,25 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
   padding: 0 var(--px) 64px; overflow: hidden; background: var(--clr-dark);
 }
 .hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.55); }
-.hero__content { position: relative; z-index: 1; max-width: 640px; }
+.hero__content { position: relative; z-index: 1; max-width: 640px; border-left: 5px solid var(--clr-accent); padding-left: 1.5rem; }
 .hero__tag {
-  display: inline-block; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--clr-aqua); border: 1px solid var(--clr-aqua); padding: 0.3em 0.9em;
-  border-radius: 100px; margin-bottom: 1rem;
+  display: inline-block; font-family: var(--font-sans); font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 1rem;
 }
-.hero__title { color: var(--clr-cream); font-style: italic; }
-.hero__sub   { color: rgba(240,230,210,0.75); margin-top: 0.75rem; font-size: 1.05rem; }
+.hero__title { color: var(--clr-bg); }
+.hero__sub   { color: rgba(246,241,230,0.75); margin-top: 0.75rem; font-size: 1.05rem; }
 .hero__actions { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
 
 /* ── Pull Quote ─────────────────────────────────── */
 .pull-quote {
-  background: var(--clr-dark); color: var(--clr-cream);
-  padding: 36px var(--px); display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+  background: var(--clr-dark); color: var(--clr-muted);
+  padding: 36px var(--px) 36px calc(var(--px) + 1.5rem);
+  display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+  border-left: 4px solid var(--clr-accent);
 }
 .pull-quote__text {
   flex: 1; min-width: 260px; font-family: var(--font-serif); font-style: italic;
-  font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.7; color: rgba(240,230,210,0.9);
+  font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.7;
 }
 
 /* ── Photo Mosaic ───────────────────────────────── */
@@ -141,12 +142,12 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 
 /* ── Distance Strip ─────────────────────────────── */
 .distance-strip {
-  background: var(--clr-mid); padding: 20px var(--px);
+  background: var(--clr-mid); padding: 20px var(--px); border-top: 2px solid var(--clr-dark);
   display: flex; justify-content: center; gap: clamp(1rem,4vw,3rem); flex-wrap: wrap;
 }
-.distance-item { text-align: center; color: var(--clr-cream); }
+.distance-item { text-align: center; color: var(--clr-bg); }
 .distance-item__km    { font-family: var(--font-serif); font-size: 1.6rem; font-weight: bold; line-height: 1; }
-.distance-item__label { font-size: 0.72rem; opacity: 0.8; letter-spacing: 0.05em; margin-top: 2px; }
+.distance-item__label { font-family: var(--font-sans); font-size: 0.72rem; color: var(--clr-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
 
 /* ── Page Hero (inner pages) ────────────────────── */
 .page-hero { background: var(--clr-dark); color: var(--clr-cream); padding: 80px var(--px) 60px; }
